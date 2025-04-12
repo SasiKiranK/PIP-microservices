@@ -8,6 +8,7 @@ import javax.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class OfferResource {
+
     private final OfferDAO offerDAO;
 
     public OfferResource(OfferDAO offerDAO) {
@@ -17,7 +18,12 @@ public class OfferResource {
     @GET
     @Path("/{id}")
     public Response getOffer(@PathParam("id") int id) {
-        return offerDAO.getById(id);
+        Offer offer = offerDAO.getById(id);
+        if (offer != null) {
+            return Response.ok(offer).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
     }
 
     @POST
@@ -26,7 +32,6 @@ public class OfferResource {
         Offer saved = offerDAO.getById(id);
         return Response.ok(saved).build();
     }
-
 
     @PUT
     @Path("/{id}/approve")

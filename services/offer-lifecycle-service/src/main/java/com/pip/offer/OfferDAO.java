@@ -1,9 +1,13 @@
 package com.pip.offer;
 
-import org.skife.jdbi.v2.sqlobject.*;
-import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.statement.GetGeneratedKeys;
 
-@RegisterMapper(OfferMapper.class)
+
+@RegisterBeanMapper(Offer.class)
 public interface OfferDAO {
     @SqlUpdate("INSERT INTO offers (title, discount, status) VALUES (:title, :discount, :status)")
     @GetGeneratedKeys

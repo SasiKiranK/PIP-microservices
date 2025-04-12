@@ -9,9 +9,8 @@ server:
 
 database:
   driverClass: org.postgresql.Driver
-  user: postgres
-  password: postgres
-  url: jdbc:postgresql://localhost:5432/pip
+  user: pipuser
+  password: pippass
+  url: jdbc:postgresql://postgres:5432/pipdb
   properties:
     charSet: UTF-8
-    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
