@@ -42,12 +42,12 @@
             <version>42.2.5</version>
         </dependency>
 
-        <!-- JDBI v2 -->
-        <dependency>
-            <groupId>org.skife.jdbi</groupId>
-            <artifactId>jdbi</artifactId>
-            <version>2.78</version>
-        </dependency>
+<!-- Dropwizard JDBI3 (uses JDBI v3) -->
+<dependency>
+    <groupId>io.dropwizard</groupId>
+    <artifactId>dropwizard-jdbi3</artifactId>
+    <version>${dropwizard.version}</version>
+</dependency>
     </dependencies>
 
     <build>

@@ -1,11 +1,10 @@
 package com.pip.offer;
 
 import io.dropwizard.Application;
-import io.dropwizard.setup.Environment;
-import io.dropwizard.db.DataSourceFactory;
-import io.dropwizard.jdbi.DBIFactory;
-import org.skife.jdbi.v2.DBI;
 import io.dropwizard.Configuration;
+import io.dropwizard.jdbi.DBIFactory;
+import io.dropwizard.setup.Environment;
+import org.skife.jdbi.v2.DBI;
 
 public class OfferApplication extends Application<Configuration> {
     @Override

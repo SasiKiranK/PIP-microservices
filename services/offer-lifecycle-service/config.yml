@@ -10,7 +10,7 @@ server:
 database:
   driverClass: org.postgresql.Driver
   user: postgres
-  password: pippass
+  password: postgres
   url: jdbc:postgresql://localhost:5432/pip
   properties:
     charSet: UTF-8
