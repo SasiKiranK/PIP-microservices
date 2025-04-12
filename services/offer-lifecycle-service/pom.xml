@@ -14,42 +14,35 @@
         <dropwizard.version>2.1.0</dropwizard.version>
     </properties>
 
-    <dependencies>
-        <!-- Dropwizard Core -->
-        <dependency>
-            <groupId>io.dropwizard</groupId>
-            <artifactId>dropwizard-core</artifactId>
-            <version>${dropwizard.version}</version>
-        </dependency>
+<dependencies>
+    <!-- Dropwizard Core -->
+    <dependency>
+        <groupId>io.dropwizard</groupId>
+        <artifactId>dropwizard-core</artifactId>
+        <version>${dropwizard.version}</version>
+    </dependency>
 
-        <!-- Dropwizard JDBI3 -->
-        <dependency>
-            <groupId>io.dropwizard</groupId>
-            <artifactId>dropwizard-jdbi3</artifactId>
-            <version>${dropwizard.version}</version>
-        </dependency>
+    <!-- Dropwizard JDBI3 -->
+    <dependency>
+        <groupId>io.dropwizard</groupId>
+        <artifactId>dropwizard-jdbi3</artifactId>
+        <version>${dropwizard.version}</version>
+    </dependency>
 
-        <!-- Dropwizard DB (for DataSourceFactory) -->
-        <dependency>
-            <groupId>io.dropwizard</groupId>
-            <artifactId>dropwizard-db</artifactId>
-            <version>${dropwizard.version}</version>
-        </dependency>
+    <!-- Dropwizard DB (for DataSourceFactory) -->
+    <dependency>
+        <groupId>io.dropwizard</groupId>
+        <artifactId>dropwizard-db</artifactId>
+        <version>${dropwizard.version}</version>
+    </dependency>
 
-        <!-- PostgreSQL JDBC Driver -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.5</version>
-        </dependency>
-
-        <!-- JDBI SQL Object Plugin -->
-        <dependency>
-            <groupId>org.jdbi</groupId>
-            <artifactId>jdbi3-sqlobject</artifactId>
-            <version>3.43.0</version>
-        </dependency>
-    </dependencies>
+    <!-- PostgreSQL JDBC Driver -->
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.2.5</version>
+    </dependency>
+</dependencies>
 
     <build>
         <plugins>

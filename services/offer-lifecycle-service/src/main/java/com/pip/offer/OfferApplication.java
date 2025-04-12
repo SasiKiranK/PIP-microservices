@@ -1,20 +1,16 @@
 package com.pip.offer;
 
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.jdbi3.JdbiFactory;
 import io.dropwizard.setup.Environment;
-import io.dropwizard.db.DataSourceFactory;
 import org.jdbi.v3.core.Jdbi;
 
-public class OfferApplication extends Application<Configuration> {
+public class OfferApplication extends Application<OfferConfiguration> {
 
     @Override
-    public void run(Configuration configuration, Environment environment) {
+    public void run(OfferConfiguration configuration, Environment environment) {
         final JdbiFactory factory = new JdbiFactory();
-        final DataSourceFactory dataSourceFactory = ((OfferConfiguration) configuration).getDataSourceFactory();
-
-        final Jdbi jdbi = factory.build(environment, dataSourceFactory, "postgresql");
+        final Jdbi jdbi = factory.build(environment, configuration.getDataSourceFactory(), "postgresql");
 
         final OfferDAO offerDAO = jdbi.onDemand(OfferDAO.class);
         environment.jersey().register(new OfferResource(offerDAO));
