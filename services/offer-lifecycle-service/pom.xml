@@ -21,6 +21,33 @@
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
+        <!-- Dropwizard Core -->
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-core</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <!-- Dropwizard JDBI -->
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-jdbi</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <!-- PostgreSQL Driver -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.5</version>
+        </dependency>
+
+        <!-- JDBI v2 -->
+        <dependency>
+            <groupId>org.skife.jdbi</groupId>
+            <artifactId>jdbi</artifactId>
+            <version>2.78</version>
+        </dependency>
     </dependencies>
 
     <build>
