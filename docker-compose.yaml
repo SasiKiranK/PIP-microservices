@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: pip_postgres
+    environment:
+      POSTGRES_USER: pipuser
+      POSTGRES_PASSWORD: pippass
+      POSTGRES_DB: pipdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgressql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  adminer:
+    image: adminer
+    container_name: pip_adminer
+    restart: always
+    ports:
+      - 1234:8080
+  offer-service:
+    build:
+      context: ./services/offer-lifecycle-service
+    container_name: pip_offer_service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+
+volumes:
+  postgres_data:
